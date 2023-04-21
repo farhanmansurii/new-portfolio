@@ -17,10 +17,8 @@ export default function AnimatedBody({
   wordSpace,
   charSpace,
 }: AnimatedBodyProps) {
-  //   const text = "Animated Text"; // This would normally be passed into this component as a prop!
 
   const ctrls = useAnimation();
-
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -35,6 +33,9 @@ export default function AnimatedBody({
     }
   }, [ctrls, inView]);
 
+  const lines = text.split('\n').map((line, index) => (
+    <span key={index}>{line}</span>
+  ));
 
   const bodyAnimation = {
     hidden: {
@@ -51,19 +52,37 @@ export default function AnimatedBody({
       },
     },
   };
-
+  const wordAnimation = {
+    initial: {
+      opacity: 0,
+      y: 150,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1,
+        ease: [0.2, 0.65, 0.3, 0.9],
+        duration: 1,
+      },
+    },
+  };
   return (
-    <motion.p
-      aria-label={text}
-      role="heading"
-      className={className}
-      ref={ref}
-      aria-hidden="true"
-      initial="hidden"
-      animate={ctrls}
-      variants={bodyAnimation}
-    >
-      {text}
-    </motion.p>
+    <>
+      {lines.map((line, index) => (
+        <motion.span
+          className={className}
+          ref={ref}
+          aria-hidden="true"
+          initial="hidden"
+          animate={ctrls}
+          variants={bodyAnimation}
+          key={index}
+          style={{ display: "block", marginBottom: wordSpace }}
+        >
+          {line}
+        </motion.span>
+      ))}
+    </>
   );
 }

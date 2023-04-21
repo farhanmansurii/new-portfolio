@@ -1,3 +1,4 @@
+import AnimatedTitle from '@/components/AnimatedTitle';
 import Link from 'next/link';
 import React from 'react'
 
@@ -12,8 +13,8 @@ export default function Works(props: any) {
 
       <div className="flex w-full h-full  gap-4  font-neue flex-col   justify-center">
         <div className='w-full lg:border border-neutral-500/20  justify-center p-4 flex flex-col gap-4'>
-          <div className=' mt-24 text-7xl text-red-500 font-migra'>my <span className='italic'>works</span></div>
-          <div className='text-lg w-full mb-24 h-full  flex  flex-col  '>
+          <AnimatedTitle text=' my works' wordSpace={"mr-[14px]"}
+            charSpace={"mr-[0.001em]"} className=' font-migra mt-24 text-7xl text-red-500' /> <div className='text-lg w-full mb-24 h-full  flex  flex-col  '>
             {
               sorteddata.map((e: any, i: number) =>
                 <Link href={`/${e._id}`} key={e._id}>

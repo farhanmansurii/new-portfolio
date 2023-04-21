@@ -6,24 +6,6 @@ import React, { useEffect, useRef } from 'react'
 
 
 export default function About() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ref.current,
-        { display: "none", translateY: 100 },
-        {
-          display: "flex",
-          translateY: 0,
-          stagger: 0.1,
-          duration: 1,
-          ease: "power2.out",
-        }
-      );
-    }, ref);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
 
@@ -38,7 +20,7 @@ export default function About() {
           <div className='text-lg w-full my-24 h-full  flex gap-5 flex-col  '>
             <AnimatedTitle text='about me' wordSpace={"mr-[14px]"}
               charSpace={"mr-[0.001em]"} className=' font-migra mt-24 text-7xl text-red-500' />
-            <div ref={ref} className='text-3xl lg:text-5xl lg:w-10/12  '>
+            <div className='text-3xl lg:text-5xl lg:w-10/12  '>
 
               <AnimatedBody delay={2} text=' Im an Indian front-end/full-stack and creative
               web developer keen eye for design and a knack for solving complex problems through simple and interactive interfaces.
