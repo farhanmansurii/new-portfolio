@@ -15,7 +15,7 @@ export default function Resume() {
 
       <div className="flex w-full h-full  gap-4  font-neue flex-col   justify-center">
         <div className='w-full lg:border border-neutral-500/20  justify-center p-4 flex flex-col gap-4'>
-          <div className=' mt-24 text-7xl text-red-500'>my <span className='italic'>resume</span></div>
+          <div className=' mt-24 text-7xl font-migra text-red-500'>my <span className='italic'>resume</span></div>
           {loading && (
             <div className="flex justify-center items-center h-[400px]">
               Loading

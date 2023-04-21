@@ -12,7 +12,7 @@ export default function Home() {
   return (<>
     <main className="flex h-[95vh]">
 
-      <div className="border w-full justify-around mx-auto  flex items-center">
+      <div className=" w-full justify-around mx-auto  flex items-center">
         <div className="w-4/12 hidden lg:flex h-full border-r border-neutral-500 "></div>
         <div className="w-full h-full">
           <div className="h-full flex flex-col justify-center">

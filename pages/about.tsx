@@ -1,7 +1,11 @@
 import TechStack from '@/components/TechStack'
+
 import React from 'react'
 
+
 export default function About() {
+
+
   return (
 
     <main className="flex font-neue ">
@@ -13,7 +17,8 @@ export default function About() {
         <div className='w-full lg:border border-neutral-500/20  justify-center p-4 flex flex-col gap-4'>
 
           <div className='text-lg w-full my-24 h-full  flex gap-5 flex-col  '>
-            <div className='  text-7xl text-red-500'>about <span className='italic'>me</span></div>
+            <h1 className='text-header font-migra mt-24 text-7xl  text-red-500'>about <span className='italic'>me</span></h1>
+
             <div className='text-3xl lg:text-5xl lg:w-10/12  '>
               Im an Indian front-end/full-stack and creative
               web developer keen eye for design and a knack for solving complex problems through simple and interactive interfaces.
