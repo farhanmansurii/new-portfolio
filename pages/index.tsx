@@ -5,10 +5,31 @@ import SelectedWorks from '@/components/SelectedWorks'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SelectedWorkCard from '@/components/SelectedWorkCard'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import Marquee from '@/components/Marquee'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const textRef = useRef(null);
+  // useEffect(() => {
+  //   const text = textRef.current;
+
+  //   gsap.set(text, { xPercent: 100 }); // Start the text off screen to the right
+
+  //   const animation = gsap.to(text, {
+  //     duration: 10, // The duration of the animation
+  //     xPercent: -100, // Move the text to the left side of the screen
+  //     ease: "none", // Use linear easing for a constant speed
+  //     repeat: -1, // Repeat the animation indefinitely
+  //   });
+
+  //   return () => {
+  //     animation.kill(); // Stop the animation when the component unmounts
+  //   };
+  // }, []);
+
   return (<>
     <main className="flex h-[95vh]">
 

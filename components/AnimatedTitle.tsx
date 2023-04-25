@@ -43,8 +43,8 @@ export default function AnimatedTitle({
       opacity: 1,
       y: `0em`,
       transition: {
-        duration: 1,
-        ease: [0.2, 0.65, 0.3, 0.9],
+        ease: [0.2, 0.6, 0.3, 0.6],
+        duration: 0.7,
       },
     },
   };
@@ -58,8 +58,8 @@ export default function AnimatedTitle({
       y: 0,
       transition: {
         delay: 1,
-        ease: [0.2, 0.65, 0.3, 0.9],
-        duration: 1,
+        ease: [0.2, 0.6, 0.3, 0.6],
+        duration: 0.7,
       },
     },
   };

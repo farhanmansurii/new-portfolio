@@ -6,6 +6,21 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    extend: {
+      animation: {
+        loopL: 'loopTextLeft 10s linear infinite'
+      },
+      keyframes: {
+        loopTextLeft: {
+          '0%': {
+            transform: 'translateX(0)'
+          },
+          '100%': {
+            transform: 'translateX(-100%)'
+          }
+        }
+      }
+    },
     fontFamily: {
       'migra': ['Migra'],
       'neue': ['Neue Montreal'],

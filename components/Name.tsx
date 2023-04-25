@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Name() {
   return (
-    <div className=' w-11/12 mx-auto font-neue flex gap-3 flex-col'>
+    <div className=' font-neue p-6 flex gap-3 flex-col'>
       <div className='text-7xl font-migra lg:text-8xl capitalize italic '>Farhan mansuri</div>
-      <div className='text-3xl lg:text-4xl'> front-end / full-stack developer
+      <div className='text-3xl lg:text-4xl'> Frontend/FullStack developer
         <br /> specialised in <span className='font-migra'>
 
           Websites &
