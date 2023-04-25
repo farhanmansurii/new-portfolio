@@ -21,7 +21,6 @@ export default function About() {
           <div className=' font-migra mt-24 text-7xl text-red-500' >
 
             <Marquee text='About me' />
-            <MenuButton>About Paege</MenuButton>
           </div>
           <div className='text-3xl lg:text-5xl lg:w-10/12  '>
 
