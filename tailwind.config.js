@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        loopL: 'loopTextLeft 10s linear infinite'
+        loopL: 'loopTextLeft 12s linear infinite'
       },
       keyframes: {
         loopTextLeft: {

@@ -8,6 +8,7 @@ import SelectedWorkCard from '@/components/SelectedWorkCard'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Marquee from '@/components/Marquee'
+import TechStack from '@/components/TechStack'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,7 +32,7 @@ export default function Home() {
   // }, []);
 
   return (<>
-    <main className="flex h-[95vh]">
+    <main className="flex ">
 
       <div className=" w-full justify-around mx-auto  flex items-center">
         <div className="w-4/12 hidden lg:flex h-full border-r border-neutral-500 "></div>
@@ -39,6 +40,7 @@ export default function Home() {
           <div className="h-full flex flex-col justify-center">
             <Name />
             <div className="border-t border-black text-right capitalize text-lg mt-4 p-4">portfolio &copy; 2023</div>
+            <TechStack />
           </div>
         </div>
       </div>
