@@ -26,7 +26,7 @@ export default function Name() {
 
   }, []);
   return (
-    <div className=' h-[80vh] justify-center font-neue p-6 flex gap-3 flex-col'>
+    <div className=' h-[80vh] justify-center font-neue p-6 flex  flex-col'>
       <div className='text-7xl h-fit font-migra lg:text-8xl italic capitalize  ' >
         <span >
 
@@ -35,11 +35,11 @@ export default function Name() {
       </div>
       <AnimatedWords2
         title={"Frontend/FullStack developer"}
-        style={`inline-flex items-start text-left text-4xl font-neue  `}
+        style={`inline-flex flex-wrap items-start text-left text-2xl lg:text-4xl font-neue  `}
       />
       <AnimatedWords2
         title={"specialised in Websites & Webapps"}
-        style={`inline-flex items-start text-left text-4xl font-neue  `}
+        style={`inline-flex flex-wrap items-start text-left  text-2xl w-10/12 lg:text-4xl font-neue  `}
       />
       {/* <div ref={ref} className='text-3xl text-black -z-50  lg:text-4xl'> Frontend/FullStack developer
         <br /> specialised in <span className='font-migra'>
