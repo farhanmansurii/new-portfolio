@@ -4,16 +4,12 @@ import { MenuButton } from '@/components/MenuButton';
 import { gsap } from 'gsap';
 import dynamic from 'next/dynamic';
 import React, { useEffect, useRef } from 'react'
-const AboutText = dynamic(() => import('../components/AboutText'), {
-  loading: () => <p></p>, ssr: false,
-})
+import Marquee from '../components/Marquee';
+import AboutText from '../components/AboutText';
+
 const TechStack = dynamic(() => import('../components/TechStack'), {
   loading: () => <p></p>, ssr: false,
 })
-const Marquee = dynamic(() => import('../components/Marquee'), {
-  loading: () => <p></p>, ssr: false,
-})
-
 export default function About() {
 
   return (

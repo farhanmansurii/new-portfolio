@@ -30,7 +30,7 @@ export default function Name() {
       <div className='text-7xl h-fit font-migra lg:text-8xl italic capitalize  ' >
         <span >
 
-          Farhan mansuri
+          Farhan <span className='text-red-500'> mansuri</span>
         </span>
       </div>
       <AnimatedWords2

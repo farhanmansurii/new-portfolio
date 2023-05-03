@@ -1,4 +1,5 @@
 import AnimatedTitle from '@/components/AnimatedTitle';
+import AnimatedWords2 from '@/components/AnimatedWords2';
 import Marquee from '@/components/Marquee';
 import { AnimatePresence, motion, useAnimate, useInView, usePresence } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -35,13 +36,11 @@ export default function Works(props: any) {
                 <div
                   className="bhosdika flex border-b hover:bg-black  hover:text-white duration-200 hover:pl-9 border-gray-500 p-4">
                   <AnimatePresence>
-                    <motion.div
-                      transition={{
-                        delay: 0.009 * i, ease: 'easeIn'
-                      }}
-                      initial={{ opacity: 0, y: 20, }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 5, }} className="w">{i + 1} . {e.title}</motion.div>
+                    <AnimatedWords2
+                      title={(i + 1 + '.') + ' ' + e.title}
+                      style={`flex flex-wrap items-start text-left text-2xl lg:text-4xl font-neue  `}
+                    />
+
                   </AnimatePresence>
                 </div>
               </Link>

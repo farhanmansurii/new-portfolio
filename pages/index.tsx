@@ -3,12 +3,9 @@ import { Inter } from 'next/font/google'
 import { useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 
-const TechStack = dynamic(() => import('../components/TechStack'), {
-  loading: () => <p></p>, ssr: false,
-})
-const Name = dynamic(() => import('../components/Name'), {
-  loading: () => <p></p>, ssr: false,
-})
+const TechStack = dynamic(() => import('../components/TechStack'), { ssr: true }
+)
+const Name = dynamic(() => import('../components/Name'), { ssr: true })
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
