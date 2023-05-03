@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       />
     */}
-      {/* <PreLoader /> */}
+      <PreLoader />
     <Navbar />
     <Component {...pageProps} />
     <Footer />
