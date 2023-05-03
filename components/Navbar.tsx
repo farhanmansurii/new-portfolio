@@ -7,7 +7,7 @@ export default function Navbar() {
   const router = useRouter()
 
   return (
-    <div className="fixed text-lg gap-2 mx-3 flex flex-row lg:flex-col  p-4 font-neue">
+    <div className="fixed text-lg  text-blend-difference gap-2 mx-3 flex flex-row lg:flex-col  p-4 font-neue">
       <Link href='/'>
         <MenuButton className={router.asPath === '/' ? 'text-red-500' : ''}>farhan</MenuButton>
       </Link>

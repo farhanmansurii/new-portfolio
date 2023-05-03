@@ -13,6 +13,9 @@ body {
     rgb(var(--background-start-rgb));
     ;
 }
+.negative-blend {
+  mix-blend-mode: difference;
+}
 
 
 @font-face {
