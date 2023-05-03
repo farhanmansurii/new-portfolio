@@ -39,7 +39,7 @@ export default function Works(props: any) {
                       transition={{
                         delay: 0.009 * i, ease: 'easeIn'
                       }}
-                      initial={{ opacity: 0, y: 5, }}
+                      initial={{ opacity: 0, y: 20, }}
                       whileInView={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 5, }} className="w">{i + 1} . {e.title}</motion.div>
                   </AnimatePresence>

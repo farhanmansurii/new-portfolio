@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import PreLoader from '@/components/Preloader'
 import { useFollowPointer } from '@/components/use-follow-pointer'
 import '@/styles/globals.css'
 import { motion } from 'framer-motion'
@@ -18,7 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
         className="box"
         animate={{ x, y }}
 
-      /> */}
+      />
+    */}
+      <PreLoader />
     <Navbar />
     <Component {...pageProps} />
     <Footer />

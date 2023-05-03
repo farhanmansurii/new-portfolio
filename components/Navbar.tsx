@@ -8,16 +8,16 @@ export default function Navbar() {
   return (
     <div className="fixed text-lg  text-blend-difference gap-2 mx-3 flex flex-row lg:flex-col  p-4 font-neue">
       <Link href='/'>
-        <div className={`nav-link ${router.asPath === '/' ? 'text-red-500 mix-blend-difference' : 'text-black'}`}>farhan</div>
+        <div className={`nav-link ${router.asPath === '/' ? 'text-red-500 mix-blend-difference' : ''}`}>farhan</div>
       </Link>
       <Link href='/about'>
-        <div className={`nav-link ${router.asPath === '/about' ? 'text-red-500 mix-blend-difference' : 'text-black'}`}>about-me</div>
+        <div className={`nav-link ${router.asPath === '/about' ? 'text-red-500 mix-blend-difference' : ''}`}>about-me</div>
       </Link>
       <Link href='/works'>
-        <div className={`nav-link ${router.asPath === '/works' ? 'text-red-500 mix-blend-difference' : 'text-black'}`}>my-works</div>
+        <div className={`nav-link ${router.asPath === '/works' ? 'text-red-500 mix-blend-difference' : ''}`}>my-works</div>
       </Link>
       <Link href='/resume'>
-        <div className={`nav-link ${router.asPath === '/resume' ? 'text-red-500 mix-blend-difference' : 'text-black'}`}>my-résumé</div>
+        <div className={`nav-link ${router.asPath === '/resume' ? 'text-red-500 mix-blend-difference' : ''}`}>my-résumé</div>
       </Link>
     </div>
   )

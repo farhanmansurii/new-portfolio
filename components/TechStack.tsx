@@ -11,7 +11,31 @@ const techVariants = {
   exit: { opacity: 0, y: -50, transition: { duration: 0.5 } },
 };
 export default function TechStack() {
+  const ref = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (ref.current) {
+
+      gsap.fromTo(ref.current
+        ,
+        {
+          y: 40,
+          opacity: 0,
+          ease: 'power4.out'
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: {
+            amount: 0.15,
+          },
+          duration: 0.5,
+          ease: 'power4.out'
+        }
+      )
+    }
+
+  }, []);
   return (
     <div className='my-10 w-full border-neutral-500  ' >
       <div className='text-3xl lg:text-5xl w-10/12 p-4'>
@@ -24,7 +48,7 @@ export default function TechStack() {
           My development stack is focused on performance & accessibility with delightful interactions.
         </motion.div>
       </div>
-      <div className='p-4 w-10/12  flex flex-wrap gap-3'>
+      <div ref={ref} className='p-4 w-10/12  flex flex-wrap gap-3'>
         <div className='rounded-full flex border-2 hover:text-white hover:bg-red-500 hover:border-red-500 duration-150  border-black  px-3 py-2 items-center gap-1
         '><IoLogoHtml5 /> HTML</div>
         <div className='rounded-full flex border-2 hover:text-white hover:bg-blue-500 hover:border-blue-500 duration-150  border-black  px-3 py-2 items-center gap-1

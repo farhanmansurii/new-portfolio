@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import SplitType from "split-type";
 
 type AnimatedBodyProps = {
   text: string;
@@ -37,21 +38,25 @@ export default function AnimatedBody({
     <span key={index}>{line}</span>
   ));
 
+
+
+
   const bodyAnimation = {
     hidden: {
       opacity: 0,
-      y: `1em`,
+      y: 50,
     },
     visible: {
       opacity: 1,
-      y: `0em`,
+      y: 0,
       transition: {
-        delay: 0.1 * delay,
-        duration: 0.7,
-        ease: [0.2, 0.65, 0.3, 0.6],
+        // delay: 1,
+        ease: [0.2, 0.65, 0.3, 0.9],
+        duration: 0.8,
       },
     },
   };
+
   const wordAnimation = {
     initial: {
       opacity: 0,

@@ -1,15 +1,14 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Name from '@/components/Name'
-import SelectedWorks from '@/components/SelectedWorks'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import SelectedWorkCard from '@/components/SelectedWorkCard'
 import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import Marquee from '@/components/Marquee'
-import TechStack from '@/components/TechStack'
+import dynamic from 'next/dynamic'
 
+const TechStack = dynamic(() => import('../components/TechStack'), {
+  loading: () => <p></p>, ssr: false,
+})
+const Name = dynamic(() => import('../components/Name'), {
+  loading: () => <p></p>, ssr: false,
+})
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {

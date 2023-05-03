@@ -1,16 +1,53 @@
-import React from 'react'
+import { gsap } from 'gsap';
+import React, { useEffect, useRef } from 'react'
+import AnimatedWords2 from './AnimatedWords2';
+import AnimatedWords from './AnimatedWords2';
+import SplitType from 'split-type';
 
 export default function Name() {
+  const ref = useRef<HTMLDivElement>();
+
+  useEffect(() => {
+    if (ref.current) {
+      const myText = new SplitType(ref.current, {
+        types: 'words'
+      })
+
+      gsap.to(myText.words, {
+        duration: 1,
+        y: -20,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power4.out",
+        // onComplete: () => split.revert(),
+      });
+      console.log(myText.words)
+    }
+
+  }, []);
   return (
     <div className=' h-[80vh] justify-center font-neue p-6 flex gap-3 flex-col'>
-      <div className='text-7xl font-migra lg:text-8xl capitalize italic '>Farhan mansuri</div>
-      <div className='text-3xl lg:text-4xl'> Frontend/FullStack developer
+      <div className='text-7xl h-fit font-migra lg:text-8xl italic capitalize  ' >
+        <span >
+
+          Farhan mansuri
+        </span>
+      </div>
+      <AnimatedWords2
+        title={"Frontend/FullStack developer"}
+        style={`inline-flex items-start text-left text-4xl font-neue  `}
+      />
+      <AnimatedWords2
+        title={"specialised in Websites & Webapps"}
+        style={`inline-flex items-start text-left text-4xl font-neue  `}
+      />
+      {/* <div ref={ref} className='text-3xl text-black -z-50  lg:text-4xl'> Frontend/FullStack developer
         <br /> specialised in <span className='font-migra'>
 
           Websites &
         </span >
         <span className='font-migra'> Webapps</span>
-      </div>
+      </div> */}
       <div className='flex gap-4 mt-4'>
         <a href="mailto:mansurifarhafm@gmail.com" className='rounded-full border p-4 hover:scale-105 duration-150 hover:bg-black hover:text-white'>
           <svg
