@@ -45,7 +45,7 @@ const AnimatedWords2: React.FC<AnimatedWords2Props> = ({ title, style }) => {
     <h1 aria-label={title} role="heading">
       <motion.span className={style} ref={ref}>
         {title.split(" ").map((word, index) => (
-          <motion.div
+          <motion.span
             key={index}
             initial="initial"
             animate={ctrls}
@@ -61,7 +61,7 @@ const AnimatedWords2: React.FC<AnimatedWords2Props> = ({ title, style }) => {
             >
               {word + "\u00A0"}
             </motion.span>
-          </motion.div>
+          </motion.span>
         ))}
       </motion.span>
     </h1>

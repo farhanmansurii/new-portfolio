@@ -1,46 +1,43 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
+import { useInView } from 'react-intersection-observer';
 
 export default function GSAPLines({ text }: { text: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [played, setPlayed] = useState(false);
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 0,
+  });
 
   useEffect(() => {
-    const element = ref.current;
+    if (inView && !played) {
+      const element = ref.current;
 
-    if (!element) {
-      return;
-    }
+      if (!element) {
+        return;
+      }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const tl = gsap.timeline();
-          const ourText = new SplitType(element, { types: 'lines, words, chars' });
-          const chars = ourText.lines;
-          tl.from(chars, {
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.inOut',
-            yPercent: 100,
-            stagger: 0.01,
-          });
-
-          observer.unobserve(element);
-        }
+      const tl = gsap.timeline();
+      const ourText = new SplitType(element, { types: 'lines, words, chars' });
+      const chars = ourText.lines;
+      tl.from(chars, {
+        opacity: 0,
+        duration: 1,
+        ease: 'power4.inOut',
+        yPercent: 100,
+        stagger: 0.01,
       });
-    });
 
-    observer.observe(element);
-
-    return () => {
-      observer.unobserve(element);
-    };
-  }, []);
+      setPlayed(true);
+    }
+  }, [inView, played]);
 
   return (
-    <p ref={ref} className="our-text pb-12 h-fit">
-      {text}
-    </p>
+    <div ref={inViewRef}>
+      <p ref={ref} className="our-text pb-12 h-fit">
+        {text}
+      </p>
+    </div>
   );
 }

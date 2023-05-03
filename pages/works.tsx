@@ -33,16 +33,13 @@ export default function Works(props: any) {
           >
             {sorteddata.map((e: any, i: number) => (
               <Link href={`/${e._id}`} key={e._id}>
-                <div
-                  className="bhosdika flex border-b hover:bg-black  hover:text-white duration-200 hover:pl-9 border-gray-500 p-4">
-                  <AnimatePresence>
+                <AnimatePresence>
                     <AnimatedWords2
                       title={(i + 1 + '.') + ' ' + e.title}
-                      style={`flex flex-wrap items-start text-left text-2xl lg:text-4xl font-neue  `}
+                    style={` flex p-5 hover:text-white hover:border-red-500 hover:pl-16 duration-150 hover:bg-red-500 border-y border-red-500  flex-wrap w-10/12 items-start text-left text-2xl lg:text-4xl font-neue  `}
                     />
 
-                  </AnimatePresence>
-                </div>
+                </AnimatePresence>
               </Link>
             ))}
           </div>
