@@ -32,11 +32,11 @@ export default function Works(props: any) {
             className="text-lg w-full mb-24 h-full  flex  flex-col"
           >
             {sorteddata.map((e: any, i: number) => (
-              <Link href={`/${e._id}`} key={e._id}>
+              <Link href={`/${e.slug}`} key={e._id}>
                 <AnimatePresence>
                     <AnimatedWords2
                       title={(i + 1 + '.') + ' ' + e.title}
-                    style={` flex p-5 hover:text-white hover:border-red-500 hover:pl-16 duration-150 hover:bg-red-500 border-y border-red-500  flex-wrap w-[98%] items-start text-left text-2xl lg:text-4xl font-neue  `}
+                    style={`flex p-5 hover:text-white hover:border-red-500 hover:pl-16 duration-150 hover:bg-red-500 border-y border-red-500  flex-wrap w-[98%] items-start text-left text-2xl lg:text-4xl font-neue  `}
                     />
 
                 </AnimatePresence>
@@ -50,10 +50,8 @@ export default function Works(props: any) {
 }
 
 export async function getStaticProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://productapi.vercel.app/api/project`);
+  const res = await fetch(`https://foliobackend.vercel.app/works/`);
   const data = await res.json();
 
-  // Pass data to the page via props
   return { props: { data } };
 }
