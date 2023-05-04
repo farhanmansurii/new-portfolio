@@ -1,27 +1,30 @@
 import { gsap } from 'gsap';
 import React, { useEffect, useRef } from 'react'
-import AnimatedWords2 from './AnimatedWords2';
-import AnimatedWords from './AnimatedWords2';
+
 import SplitType from 'split-type';
 
 export default function Name() {
-  const ref = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (ref.current) {
-      const myText = new SplitType(ref.current, {
-        types: 'words'
-      })
-
-      gsap.to(myText.words, {
-        duration: 1,
-        y: -20,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "power4.out",
-        // onComplete: () => split.revert(),
-      });
-      console.log(myText.words)
+      const words = new SplitType(ref?.current, { types: 'lines, words, chars' })
+      gsap.fromTo(
+        words.words,
+        {
+          y: 500,
+          skewY: 8,
+          clipRule: 'evenodd',
+        },
+        {
+          y: -50,
+          duration: 1,
+          skewY: 0,
+          clipRule: 'nonzero',
+          stagger: 0.02,
+          ease: 'power4.out',
+        }
+      );
     }
 
   }, []);
@@ -33,14 +36,20 @@ export default function Name() {
           Farhan <span className='text-red-500'> mansuri</span>
         </span>
       </div>
-      <AnimatedWords2
-        title={"Frontend/FullStack developer"}
-        style={`inline-flex flex-wrap items-start text-left text-2xl lg:text-4xl font-neue  `}
-      />
-      <AnimatedWords2
-        title={"specialised in Websites & Webapps"}
-        style={`inline-flex flex-wrap items-start text-left  text-2xl w-10/12 lg:text-4xl font-neue  `}
-      />
+
+      <div
+
+        className={`inline-flex   overflow-hidden flex-wrap items-start text-left text-2xl lg:text-4xl font-neue  `}
+      >
+        <span ref={ref}>
+
+          Frontend/FullStack developer
+          <br />
+
+          specialised in Websites & Webapps
+        </span>
+      </div>
+
       {/* <div ref={ref} className='text-3xl text-black -z-50  lg:text-4xl'> Frontend/FullStack developer
         <br /> specialised in <span className='font-migra'>
 

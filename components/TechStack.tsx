@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 import React, { useEffect, useRef } from 'react'
 import { FaReact, FaReacteurope } from 'react-icons/fa'
 import { IoLogoCss3, IoLogoHtml5, IoLogoJavascript } from 'react-icons/io'
-import { SiExpress, SiFramer, SiGithub, SiGraphql, SiJenkins, SiMongodb, SiNextdotjs, SiPrisma, SiReactquery, SiRedux, SiTailwindcss, SiTrpc, SiTypescript } from 'react-icons/si'
+import { SiExpress, SiFramer, SiGithub, SiGraphql, SiGreensock, SiJenkins, SiMongodb, SiNextdotjs, SiPrisma, SiReactquery, SiRedux, SiTailwindcss, SiTrpc, SiTypescript } from 'react-icons/si'
 import { motion } from 'framer-motion';
 import GSAPLines from './GSAPLines';
 
@@ -70,6 +70,10 @@ export default function TechStack() {
         '><SiReactquery />Reactquery</div>
         <div className='rounded-full flex border-2 shadow-2xl shadow-blue-500 hover:text-white hover:bg-blue-500 hover:border-blue-500 duration-150  border-black  px-3 py-2 items-center gap-1
        '><SiPrisma />Prisma</div>
+        <div className='rounded-full flex border-2 shadow-2xl shadow-black hover:text-white hover:bg-black duration-150  border-black  px-3 py-2 items-center gap-1
+       '><SiFramer />Framer-Motion</div>
+        <div className='rounded-full flex border-2 shadow-2xl shadow-green-500 hover:text-white hover:bg-green-500 duration-150 border-black hover:border-green-500  px-3 py-2 items-center gap-1
+       '><SiGreensock />GSAP</div>
         <div className='rounded-full flex border-2 shadow-2xl  hover:text-white hover:bg-black hover:border-black duration-150  border-black  px-3 py-2 items-center gap-1
         '><SiGithub />Github</div>
         <div className='rounded-full flex border-2 shadow-2xl shadow-blue-500 hover:text-white hover:bg-blue-500 hover:border-blue-500 duration-150  border-black  px-3 py-2 items-center gap-1

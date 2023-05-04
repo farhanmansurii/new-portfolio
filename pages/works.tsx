@@ -36,7 +36,7 @@ export default function Works(props: any) {
                 <AnimatePresence>
                     <AnimatedWords2
                       title={(i + 1 + '.') + ' ' + e.title}
-                    style={` flex p-5 hover:text-white hover:border-red-500 hover:pl-16 duration-150 hover:bg-red-500 border-y border-red-500  flex-wrap w-10/12 items-start text-left text-2xl lg:text-4xl font-neue  `}
+                    style={` flex p-5 hover:text-white hover:border-red-500 hover:pl-16 duration-150 hover:bg-red-500 border-y border-red-500  flex-wrap w-[98%] items-start text-left text-2xl lg:text-4xl font-neue  `}
                     />
 
                 </AnimatePresence>

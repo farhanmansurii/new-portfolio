@@ -8,7 +8,7 @@ import Marquee from '../components/Marquee';
 import AboutText from '../components/AboutText';
 
 const TechStack = dynamic(() => import('../components/TechStack'), {
-  loading: () => <p></p>, ssr: false,
+  ssr: true,
 })
 export default function About() {
 

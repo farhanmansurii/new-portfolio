@@ -2,41 +2,56 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { useInView } from 'react-intersection-observer';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export default function GSAPLines({ text }: { text: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [played, setPlayed] = useState(false);
-  const { ref: inViewRef, inView } = useInView({
-    threshold: 0,
-  });
+
 
   useEffect(() => {
-    if (inView && !played) {
+
       const element = ref.current;
 
       if (!element) {
         return;
       }
-
-      const tl = gsap.timeline();
+    gsap.registerPlugin(ScrollTrigger)
       const ourText = new SplitType(element, { types: 'lines, words, chars' });
-      const chars = ourText.lines;
-      tl.from(chars, {
-        opacity: 0,
+    const chars = ourText.lines;
+    gsap.fromTo(
+      chars,
+      {
+        y: 500,
+        skewY: 10,
+        clipRule: 'evenodd',
+        opacity: 0
+      },
+      {
+        y: -50,
         duration: 1,
-        ease: 'power4.inOut',
-        yPercent: 100,
-        stagger: 0.01,
-      });
+        opacity: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: ' center',
 
-      setPlayed(true);
-    }
-  }, [inView, played]);
+        },
+        skewY: 0,
+        clipRule: 'nonzero',
+        stagger: 0.04,
+        ease: 'power4.out',
+      }
+    );
+
+
+  }, []);
 
   return (
-    <div ref={inViewRef}>
-      <p ref={ref} className="our-text pb-12 h-fit">
+    <div >
+      <p className="our-text pb-12 h-fit overflow-hidden">
+        <span ref={ref}>
+
         {text}
+        </span>
       </p>
     </div>
   );
