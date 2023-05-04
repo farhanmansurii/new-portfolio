@@ -27,11 +27,11 @@ export default function Workdetail({ data }: { data: any }) {
                 <div>
                   <div className=" space-y-3 mt-10 lg:mt-16">
                     <button onClick={() => router.back()} className=" border-b w-fit border-black" >Back to all works</button>
-                    <div className="border-2 w-fit">
+                    <div className=" w-full  ">
 
                       <AnimatedWords2
                         title={data.title}
-                        style={"text-5xl text-left font-semibold lg:text-8xl font-migra  "}
+                        style={"text-5xl text-left flex flex-wrap font-semibold lg:text-8xl font-migra  "}
                       />
                     </div>
 
