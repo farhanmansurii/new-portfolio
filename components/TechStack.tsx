@@ -55,7 +55,7 @@ export default function TechStack() {
         '><SiTypescript />Typescript</div>
         <div className='rounded-full flex border-2 shadow-2xl shadow-blue-500 hover:text-white hover:bg-blue-500 hover:border-blue-500 duration-150  border-black  px-3 py-2 items-center gap-1
         '><FaReact />React</div>
-        <div className='rounded-full flex border-2 shadow-2xl  hover:text-white hover:bg-black hover:border-black duration-150  border-black  px-3 py-2 items-center gap-1
+        <div className='rounded-full flex border-2 shadow-2xl shadow-black hover:text-white hover:bg-black hover:border-black duration-150  border-black  px-3 py-2 items-center gap-1
         '><SiNextdotjs />Next.js</div>
         <div className='rounded-full flex border-2 shadow-2xl shadow-green-500 hover:text-white hover:bg-green-500 hover:border-green-500 duration-150  border-black  px-3 py-2 items-center gap-1
         '><SiExpress />Express.js</div>
@@ -74,7 +74,7 @@ export default function TechStack() {
        '><SiFramer />Framer-Motion</div>
         <div className='rounded-full flex border-2 shadow-2xl shadow-green-500 hover:text-white hover:bg-green-500 duration-150 border-black hover:border-green-500  px-3 py-2 items-center gap-1
        '><SiGreensock />GSAP</div>
-        <div className='rounded-full flex border-2 shadow-2xl  hover:text-white hover:bg-black hover:border-black duration-150  border-black  px-3 py-2 items-center gap-1
+        <div className='rounded-full flex border-2 shadow-2xl  shadow-black hover:text-white hover:bg-black hover:border-black duration-150  border-black  px-3 py-2 items-center gap-1
         '><SiGithub />Github</div>
         <div className='rounded-full flex border-2 shadow-2xl shadow-blue-500 hover:text-white hover:bg-blue-500 hover:border-blue-500 duration-150  border-black  px-3 py-2 items-center gap-1
         '><SiTailwindcss />Tailwindcss</div>
