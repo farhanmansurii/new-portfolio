@@ -21,8 +21,8 @@ export default function GSAPLines({ text }: { text: string }) {
     gsap.fromTo(
       chars,
       {
-        y: 500,
-        skewY: 10,
+        y: 25,
+        skewX: 5,
         clipRule: 'evenodd',
         opacity: 0
       },
@@ -35,9 +35,9 @@ export default function GSAPLines({ text }: { text: string }) {
           start: ' center',
 
         },
-        skewY: 0,
+        skewX: 0,
         clipRule: 'nonzero',
-        stagger: 0.04,
+        stagger: 0.02,
         ease: 'power4.out',
       }
     );
