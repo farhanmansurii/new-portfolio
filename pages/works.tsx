@@ -49,7 +49,7 @@ export default function Works(props: any) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`https://foliobackend.vercel.app/works/`);
   const data = await res.json();
 
